@@ -4601,3 +4601,348 @@ p.skils-description {
     color: #151515;
     transform: none;
 }
+
+
+
+
+/*============my-custom======*/
+/* =========================================================
+   FINAL MOBILE RESPONSIVE FIXES
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    /* ==========================
+       GLOBAL
+    ========================== */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden !important;
+    }
+
+    .tf-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+
+    /* ==========================
+       PROFILE SIDEBAR
+    ========================== */
+    .left-sidebar {
+        width: calc(100% - 30px) !important;
+        max-width: 420px !important;
+
+        margin: 15px auto 0 !important;
+        padding: 28px 20px 30px !important;
+
+        position: relative !important;
+        transform: none !important;
+    }
+
+    /* Top logo + Open To Work */
+    .left-sidebar .heading {
+        position: relative !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+
+        width: 100% !important;
+        min-height: 48px !important;
+
+        margin-bottom: 28px !important;
+    }
+
+    /* Left logo */
+    .left-sidebar .heading > img {
+        position: relative !important;
+        left: 0 !important;
+        z-index: 2;
+    }
+
+    /* OPEN TO WORK - EXACT CENTER */
+    .left-sidebar .heading .box-status {
+        position: absolute !important;
+
+        left: 50% !important;
+        top: 50% !important;
+
+        transform: translate(-50%, -50%) !important;
+
+        margin: 0 !important;
+        width: max-content !important;
+        white-space: nowrap !important;
+    }
+
+    .left-sidebar .image {
+        margin-bottom: 24px !important;
+    }
+
+    .left-sidebar .image .avatar {
+        width: 100% !important;
+        max-width: 330px !important;
+    }
+
+    .left-sidebar .image .signature {
+        width: 125px !important;
+    }
+
+    .left-sidebar .infor {
+        margin-bottom: 24px !important;
+    }
+
+    .left-sidebar .social-links {
+        margin-bottom: 30px !important;
+    }
+
+
+    /* ==========================
+       SERVICES
+    ========================== */
+
+    .section-services .section-services-inner {
+        padding: 30px 20px !important;
+        overflow: hidden !important;
+    }
+
+    .section-services .services-wrap {
+        width: 100% !important;
+        margin-bottom: 15px !important;
+    }
+
+    .section-services .services-wrap .heading {
+        display: flex !important;
+        align-items: flex-start !important;
+
+        width: 100% !important;
+        gap: 14px !important;
+
+        margin-bottom: 18px !important;
+    }
+
+    .section-services .services-wrap .heading .icon {
+        width: 48px !important;
+        height: 48px !important;
+
+        min-width: 48px !important;
+
+        margin-top: 3px !important;
+
+        font-size: 20px !important;
+    }
+
+    .section-services .services-wrap .heading .title {
+        margin-left: 0 !important;
+
+        font-size: 30px !important;
+        line-height: 36px !important;
+
+        flex: 1 !important;
+        min-width: 0 !important;
+    }
+
+    /*
+       IMPORTANT:
+       Removes old desktop 86px / 74px indentation.
+    */
+    .section-services .accordion-item .list-text,
+    .section-services .services-wrap .list-text {
+        padding-left: 0 !important;
+
+        margin-top: 0 !important;
+        margin-bottom: 24px !important;
+
+        width: 100% !important;
+
+        gap: 10px !important;
+    }
+
+    .section-services .services-wrap .list-text .text {
+        width: 100% !important;
+
+        position: relative !important;
+
+        padding-left: 18px !important;
+
+        font-size: 17px !important;
+        line-height: 26px !important;
+
+        margin: 0 !important;
+    }
+
+    /* clean bullet */
+    .section-services .services-wrap .list-text .text::before {
+        width: 4px !important;
+        height: 4px !important;
+
+        left: 1px !important;
+        top: 12px !important;
+
+        transform: none !important;
+
+        border-radius: 50% !important;
+    }
+
+    /* Kill negative desktop title positioning */
+    .section-services
+    .accordion-item.collapsed
+    .accordion-head > .title {
+        margin-left: 0 !important;
+    }
+
+
+    /* ==========================
+       PROCESS SECTION
+       STEP
+       ICON
+       TITLE
+       DESCRIPTION
+    ========================== */
+
+    .section-process {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    .section-process .slider-process {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow: hidden !important;
+    }
+
+    .section-process .swiper-wrapper {
+        width: 100% !important;
+    }
+
+    .section-process .swiper-slide {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .section-process .process-item {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        padding: 28px 22px 32px !important;
+
+        border-radius: 20px !important;
+    }
+
+    /*
+       This allows children of .content
+       to participate in process-item ordering.
+    */
+    .section-process .process-item .content {
+        display: contents !important;
+    }
+
+    /* STEP FIRST */
+    .section-process .process-item .step {
+        order: 1 !important;
+
+        width: max-content !important;
+
+        margin: 0 0 22px 0 !important;
+    }
+
+    /* ICON SECOND */
+    .section-process .process-item .image {
+        order: 2 !important;
+
+        width: 140px !important;
+        height: 140px !important;
+
+        margin: 0 auto 28px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        flex-shrink: 0 !important;
+    }
+
+    /* TITLE + TEXT THIRD */
+    .section-process .process-item .wrap {
+        order: 3 !important;
+
+        width: 100% !important;
+
+        text-align: left !important;
+    }
+
+    .section-process .process-item .title {
+        margin: 0 0 12px !important;
+
+        font-size: 30px !important;
+        line-height: 36px !important;
+
+        letter-spacing: -0.5px !important;
+    }
+
+    /* Don't force title into 2 lines */
+    .section-process .process-item .title br {
+        display: none !important;
+    }
+
+    .section-process .process-item .text {
+        width: 100% !important;
+
+        font-size: 16px !important;
+        line-height: 25px !important;
+
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+
+    /* ==========================
+       SELECTED WORKS
+       REMOVE FORCED 400PX IMAGE
+    ========================== */
+
+    .works-wrap .works-item .image {
+        width: 100% !important;
+        min-height: 0 !important;
+
+        border-radius: 20px !important;
+    }
+
+    .works-wrap .works-item .image img,
+    .works-wrap .works-item .image video {
+        width: 100% !important;
+
+        height: auto !important;
+        min-height: 0 !important;
+
+        object-fit: cover !important;
+    }
+
+    .works-wrap .works-item .content {
+        left: 12px !important;
+        right: 12px !important;
+        bottom: 12px !important;
+
+        padding: 14px 12px 14px 16px !important;
+
+        border-radius: 20px !important;
+    }
+
+
+    /* ==========================
+       PERFORMANCE / MOBILE BG
+    ========================== */
+
+    .body-overlay {
+        display: none !important;
+    }
+
+}
