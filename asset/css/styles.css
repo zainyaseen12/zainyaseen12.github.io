@@ -5169,3 +5169,24 @@ p.skils-description {
         line-height: 22px !important;
     }
 }
+
+
+
+.site-icon {
+    width: 260px;
+    height: 260px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+    margin: 0 auto 30px;
+    background: transparent;
+    border: 0;
+}
+
+@media (max-width: 768px) {
+    .site-icon {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 25px;
+    }
+}
