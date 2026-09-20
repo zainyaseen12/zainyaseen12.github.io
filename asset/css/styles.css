@@ -4946,3 +4946,106 @@ p.skils-description {
     }
 
 }
+
+
+
+/* =========================================================
+   LAPTOP / DESKTOP FINAL ALIGNMENT FIX
+   ADD BELOW EXISTING CSS
+========================================================= */
+
+@media (min-width:768px){
+
+    /* ==========================
+       SIDEBAR + OPEN TO WORK CENTER
+    ========================== */
+
+    .left-sidebar .heading{
+        display:flex !important;
+        align-items:center !important;
+    }
+
+    .left-sidebar .heading .box-status{
+        position:absolute !important;
+        left:50% !important;
+        transform:translateX(-50%) !important;
+        margin:0 !important;
+    }
+
+
+
+    /* ==========================
+       PROCESS SECTION IMPROVE
+    ========================== */
+
+    .section-process .process-item{
+        display:flex !important;
+        flex-direction:column !important;
+        justify-content:flex-start !important;
+        align-items:flex-start !important;
+        min-height:520px !important;
+        overflow:hidden !important;
+    }
+
+
+    .section-process .process-item .step{
+        margin-bottom:30px !important;
+    }
+
+
+    .section-process .process-item .image{
+        width:150px !important;
+        height:150px !important;
+        margin:20px auto 35px !important;
+
+        display:flex !important;
+        align-items:center !important;
+        justify-content:center !important;
+    }
+
+
+    .section-process .process-item .wrap{
+        width:100% !important;
+    }
+
+
+    .section-process .process-item .title{
+        margin-bottom:15px !important;
+    }
+
+
+    .section-process .process-item .text{
+        width:100% !important;
+        max-width:100% !important;
+        line-height:28px !important;
+    }
+
+
+
+    /* ==========================
+       SWIPER CUT FIX
+    ========================== */
+
+    .section-process .swiper-container,
+    .section-process .swiper-wrapper{
+        overflow:visible !important;
+    }
+
+
+    .section-process .swiper-slide{
+        display:flex !important;
+        justify-content:center !important;
+    }
+
+
+
+    /* ==========================
+       WORK SECTION CENTER
+    ========================== */
+
+    .works-wrap{
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+
+}
