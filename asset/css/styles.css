@@ -4607,14 +4607,16 @@ p.skils-description {
 
 /*============my-custom======*/
 /* =========================================================
-   FINAL MOBILE RESPONSIVE FIXES
-   ========================================================= */
+   FINAL CUSTOM RESPONSIVE CSS
+   MOBILE ONLY — DESKTOP ORIGINAL THEME SAFE
+========================================================= */
 
 @media (max-width: 767px) {
 
-    /* ==========================
+    /* =====================================================
        GLOBAL
-    ========================== */
+    ===================================================== */
+
     html,
     body {
         width: 100%;
@@ -4630,40 +4632,41 @@ p.skils-description {
     }
 
 
-    /* ==========================
+    /* =====================================================
        PROFILE SIDEBAR
-    ========================== */
+    ===================================================== */
+
     .left-sidebar {
-        width: calc(100% - 30px) !important;
+        width: calc(100% - 24px) !important;
         max-width: 420px !important;
 
         margin: 15px auto 0 !important;
         padding: 28px 20px 30px !important;
+
         transform: none !important;
     }
 
-    /* Top logo + Open To Work */
     .left-sidebar .heading {
         position: relative !important;
+
+        width: 100% !important;
+        min-height: 48px !important;
 
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
 
-        width: 100% !important;
-        min-height: 48px !important;
-
         margin-bottom: 28px !important;
     }
 
-    /* Left logo */
+    /* Logo stays left */
     .left-sidebar .heading > img {
         position: relative !important;
         left: 0 !important;
-        z-index: 2;
+        z-index: 2 !important;
     }
 
-    /* OPEN TO WORK - EXACT CENTER */
+    /* Open To Work exact card center */
     .left-sidebar .heading .box-status {
         position: absolute !important;
 
@@ -4672,9 +4675,21 @@ p.skils-description {
 
         transform: translate(-50%, -50%) !important;
 
-        margin: 0 !important;
         width: max-content !important;
+        margin: 0 !important;
         white-space: nowrap !important;
+
+        padding: 7px 18px !important;
+    }
+
+    .left-sidebar .heading .box-status .text-body-1 {
+        font-size: 15px !important;
+        line-height: 22px !important;
+    }
+
+    .left-sidebar .heading .box-status .dot {
+        width: 9px !important;
+        height: 9px !important;
     }
 
     .left-sidebar .image {
@@ -4699,94 +4714,233 @@ p.skils-description {
     }
 
 
-    /* ==========================
+    /* =====================================================
+       SELECTED WORKS
+       CLEAN MOBILE CARDS + PROPER GAPS
+    ===================================================== */
+
+    .works-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+
+        /* Important:
+           content comes 36px outside image,
+           so this reserves clean spacing */
+        gap: 68px !important;
+    }
+
+    .works-wrap .works-item {
+        position: relative !important;
+        width: 100% !important;
+
+        margin: 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Image area */
+    .works-wrap .works-item .image {
+        width: 100% !important;
+        height: 280px !important;
+        min-height: 280px !important;
+
+        display: block !important;
+
+        border-radius: 18px !important;
+        overflow: hidden !important;
+    }
+
+    .works-wrap .works-item .image img,
+    .works-wrap .works-item .image video {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+
+        display: block !important;
+
+        object-fit: cover !important;
+
+        margin: 0 !important;
+    }
+
+    /* Floating black content box */
+    .works-wrap .works-item .content {
+        position: absolute !important;
+
+        left: 12px !important;
+        right: 12px !important;
+        bottom: -36px !important;
+
+        width: auto !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        gap: 10px !important;
+
+        padding: 12px 11px 11px 15px !important;
+
+        border-radius: 18px !important;
+
+        background: rgba(0, 0, 0, 0.72) !important;
+        backdrop-filter: blur(16px) !important;
+        -webkit-backdrop-filter: blur(16px) !important;
+    }
+
+    .works-wrap .works-item .content .infor {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+
+        padding-top: 0 !important;
+    }
+
+    /* Category */
+    .works-wrap .works-item .content .sub {
+        font-size: 14px !important;
+        line-height: 19px !important;
+
+        margin-bottom: 2px !important;
+
+        color: rgba(255, 255, 255, 0.62) !important;
+    }
+
+    /* Project title */
+    .works-wrap .works-item .content .title {
+        font-size: 21px !important;
+        line-height: 25px !important;
+
+        letter-spacing: -0.4px !important;
+
+        margin: 0 0 8px !important;
+    }
+
+    .works-wrap .works-item .content .title a {
+        font-size: inherit !important;
+        line-height: inherit !important;
+    }
+
+    /* Date pill */
+    .works-wrap .works-item .content .date {
+        width: max-content !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        padding: 5px 16px !important;
+
+        font-size: 12px !important;
+        line-height: 17px !important;
+
+        margin: 0 !important;
+    }
+
+    /* Arrow */
+    .works-wrap .works-item .content .btn-links {
+        width: 48px !important;
+        height: 48px !important;
+
+        min-width: 48px !important;
+        flex: 0 0 48px !important;
+
+        border-radius: 10px !important;
+
+        font-size: 18px !important;
+    }
+
+
+    /* =====================================================
        SERVICES
-    ========================== */
+       BULLETS DIRECTLY UNDER HEADING
+    ===================================================== */
 
     .section-services .section-services-inner {
+        width: 100% !important;
+
         padding: 30px 20px !important;
+
         overflow: hidden !important;
     }
 
     .section-services .services-wrap {
         width: 100% !important;
+
         margin-bottom: 15px !important;
     }
 
     .section-services .services-wrap .heading {
+        width: 100% !important;
+
         display: flex !important;
         align-items: flex-start !important;
 
-        width: 100% !important;
-        gap: 14px !important;
+        gap: 12px !important;
 
-        margin-bottom: 18px !important;
+        margin-bottom: 16px !important;
     }
 
     .section-services .services-wrap .heading .icon {
-        width: 48px !important;
-        height: 48px !important;
+        width: 46px !important;
+        height: 46px !important;
 
-        min-width: 48px !important;
+        min-width: 46px !important;
 
         margin-top: 3px !important;
 
-        font-size: 20px !important;
+        font-size: 19px !important;
     }
 
     .section-services .services-wrap .heading .title {
+        min-width: 0 !important;
+        flex: 1 !important;
+
         margin-left: 0 !important;
 
-        font-size: 30px !important;
-        line-height: 36px !important;
-
-        flex: 1 !important;
-        min-width: 0 !important;
+        font-size: 28px !important;
+        line-height: 34px !important;
     }
 
-    /*
-       IMPORTANT:
-       Removes old desktop 86px / 74px indentation.
-    */
+    .section-services .services-wrap .heading .title span {
+        line-height: inherit !important;
+    }
+
+    /* Remove original 86px / 74px desktop indentation */
     .section-services .accordion-item .list-text,
     .section-services .services-wrap .list-text {
+        width: 100% !important;
+
         padding-left: 0 !important;
 
         margin-top: 0 !important;
         margin-bottom: 24px !important;
 
-        width: 100% !important;
-
-        gap: 10px !important;
+        gap: 9px !important;
     }
 
     .section-services .services-wrap .list-text .text {
+        position: relative !important;
+
         width: 100% !important;
 
-        position: relative !important;
+        margin: 0 !important;
 
         padding-left: 18px !important;
 
-        font-size: 17px !important;
-        line-height: 26px !important;
-
-        margin: 0 !important;
+        font-size: 16px !important;
+        line-height: 24px !important;
     }
 
-    /* clean bullet */
     .section-services .services-wrap .list-text .text::before {
+        left: 2px !important;
+        top: 11px !important;
+
         width: 4px !important;
         height: 4px !important;
 
-        left: 1px !important;
-        top: 12px !important;
+        border-radius: 50% !important;
 
         transform: none !important;
-
-        border-radius: 50% !important;
     }
 
-    /* Kill negative desktop title positioning */
     .section-services
     .accordion-item.collapsed
     .accordion-head > .title {
@@ -4794,16 +4948,14 @@ p.skils-description {
     }
 
 
-    /* ==========================
-       PROCESS SECTION
-       STEP
-       ICON
-       TITLE
-       DESCRIPTION
-    ========================== */
+    /* =====================================================
+       WORK PROCESS
+       STEP -> ICON -> TITLE -> DESCRIPTION
+    ===================================================== */
 
     .section-process {
         width: 100% !important;
+
         overflow: hidden !important;
     }
 
@@ -4821,6 +4973,7 @@ p.skils-description {
     .section-process .swiper-slide {
         width: 100% !important;
         max-width: 100% !important;
+
         min-width: 0 !important;
     }
 
@@ -4831,36 +4984,44 @@ p.skils-description {
         display: flex !important;
         flex-direction: column !important;
 
-        padding: 28px 22px 32px !important;
+        padding: 27px 22px 30px !important;
 
         border-radius: 20px !important;
+
+        overflow: hidden !important;
     }
 
     /*
-       This allows children of .content
-       to participate in process-item ordering.
+       Keeps HTML unchanged while allowing:
+       Step
+       Icon
+       Heading
+       Description
     */
     .section-process .process-item .content {
         display: contents !important;
     }
 
-    /* STEP FIRST */
+    /* Step */
     .section-process .process-item .step {
         order: 1 !important;
 
         width: max-content !important;
 
-        margin: 0 0 22px 0 !important;
+        margin: 0 0 22px !important;
+
+        font-size: 13px !important;
+        line-height: 18px !important;
     }
 
-    /* ICON SECOND */
+    /* Icon */
     .section-process .process-item .image {
         order: 2 !important;
 
-        width: 140px !important;
-        height: 140px !important;
+        width: 130px !important;
+        height: 130px !important;
 
-        margin: 0 auto 28px !important;
+        margin: 0 auto 26px !important;
 
         display: flex !important;
         align-items: center !important;
@@ -4869,166 +5030,142 @@ p.skils-description {
         flex-shrink: 0 !important;
     }
 
-    /* TITLE + TEXT THIRD */
+    /* Heading / Description wrapper */
     .section-process .process-item .wrap {
         order: 3 !important;
 
         width: 100% !important;
+        max-width: 100% !important;
 
         text-align: left !important;
     }
 
     .section-process .process-item .title {
-        margin: 0 0 12px !important;
+        width: 100% !important;
 
-        font-size: 30px !important;
-        line-height: 36px !important;
+        margin: 0 0 11px !important;
+
+        font-size: 27px !important;
+        line-height: 33px !important;
 
         letter-spacing: -0.5px !important;
     }
 
-    /* Don't force title into 2 lines */
     .section-process .process-item .title br {
         display: none !important;
     }
 
     .section-process .process-item .text {
         width: 100% !important;
+        max-width: 100% !important;
 
-        font-size: 16px !important;
-        line-height: 25px !important;
+        font-size: 15px !important;
+        line-height: 24px !important;
 
-        color: rgba(255, 255, 255, 0.7) !important;
+        white-space: normal !important;
+        overflow-wrap: break-word !important;
+
+        color: rgba(255, 255, 255, 0.70) !important;
     }
 
 
-    /* ==========================
-       SELECTED WORKS
-       REMOVE FORCED 400PX IMAGE
-    ========================== */
-
-    .works-wrap .works-item .image {
-        width: 100% !important;
-        min-height: 0 !important;
-
-        border-radius: 20px !important;
-    }
-
-    .works-wrap .works-item .image img,
-    .works-wrap .works-item .image video {
-        width: 100% !important;
-
-        height: auto !important;
-        min-height: 329px !important;
-
-        object-fit: cover !important;
-    }
-
-    .works-wrap .works-item .content {
-        left: 12px !important;
-        right: 12px !important;
-        bottom: 12px !important;
-
-        padding: 14px 12px 14px 16px !important;
-
-        border-radius: 20px !important;
-    }
-
-
-    /* ==========================
-       PERFORMANCE / MOBILE BG
-    ========================== */
+    /* =====================================================
+       PERFORMANCE
+    ===================================================== */
 
     .body-overlay {
         display: none !important;
     }
-
 }
 
 
-
 /* =========================================================
-   LAPTOP / DESKTOP FINAL ALIGNMENT FIX
-   ADD BELOW EXISTING CSS
+   EXTRA SMALL PHONES
 ========================================================= */
 
-@media (min-width:768px){
+@media (max-width: 424px) {
 
-
-
-
-    /* ==========================
-       PROCESS SECTION IMPROVE
-    ========================== */
-
-    .section-process .process-item{
-        display:flex !important;
-        flex-direction:column !important;
-        justify-content:flex-start !important;
-        align-items:flex-start !important;
-        min-height:520px !important;
-        overflow:hidden !important;
+    .tf-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
     }
 
+    .left-sidebar {
+        width: calc(100% - 20px) !important;
 
-    .section-process .process-item .step{
-        margin-bottom:30px !important;
+        padding-left: 18px !important;
+        padding-right: 18px !important;
     }
 
-
-    .section-process .process-item .image{
-        width:150px !important;
-        height:150px !important;
-        margin:20px auto 35px !important;
-
-        display:flex !important;
-        align-items:center !important;
-        justify-content:center !important;
+    .left-sidebar .heading .box-status {
+        padding: 6px 14px !important;
     }
 
-
-    .section-process .process-item .wrap{
-        width:100% !important;
+    .left-sidebar .heading .box-status .text-body-1 {
+        font-size: 14px !important;
     }
 
-
-    .section-process .process-item .title{
-        margin-bottom:15px !important;
+    /* Selected work slightly shorter */
+    .works-wrap {
+        gap: 62px !important;
     }
 
-
-    .section-process .process-item .text{
-        width:100% !important;
-        max-width:100% !important;
-        line-height:28px !important;
+    .works-wrap .works-item .image {
+        height: 250px !important;
+        min-height: 250px !important;
     }
 
+    .works-wrap .works-item .content {
+        left: 10px !important;
+        right: 10px !important;
+        bottom: -34px !important;
 
-
-    /* ==========================
-       SWIPER CUT FIX
-    ========================== */
-
-    .section-process .swiper-container,
-    .section-process .swiper-wrapper{
-        overflow:visible !important;
+        padding: 11px 10px 10px 13px !important;
     }
 
-
-    .section-process .swiper-slide{
-        display:flex !important;
-        justify-content:center !important;
+    .works-wrap .works-item .content .sub {
+        font-size: 13px !important;
+        line-height: 18px !important;
     }
 
-
-
-    /* ==========================
-       WORK SECTION CENTER
-    ========================== */
-
-    .works-wrap{
-        margin-left:auto !important;
-        margin-right:auto !important;
+    .works-wrap .works-item .content .title {
+        font-size: 19px !important;
+        line-height: 23px !important;
     }
 
+    .works-wrap .works-item .content .btn-links {
+        width: 44px !important;
+        height: 44px !important;
+
+        min-width: 44px !important;
+        flex-basis: 44px !important;
+    }
+
+    /* Services */
+    .section-services .services-wrap .heading .title {
+        font-size: 25px !important;
+        line-height: 31px !important;
+    }
+
+    /* Process */
+    .section-process .process-item {
+        padding: 24px 18px 27px !important;
+    }
+
+    .section-process .process-item .image {
+        width: 118px !important;
+        height: 118px !important;
+
+        margin-bottom: 23px !important;
+    }
+
+    .section-process .process-item .title {
+        font-size: 25px !important;
+        line-height: 30px !important;
+    }
+
+    .section-process .process-item .text {
+        font-size: 14px !important;
+        line-height: 22px !important;
+    }
 }
