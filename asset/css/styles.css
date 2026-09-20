@@ -4919,7 +4919,7 @@ p.skils-description {
         width: 100% !important;
 
         height: auto !important;
-        min-height: 0 !important;
+        min-height: 329px !important;
 
         object-fit: cover !important;
     }
