@@ -4956,21 +4956,6 @@ p.skils-description {
 
 @media (min-width:768px){
 
-    /* ==========================
-       SIDEBAR + OPEN TO WORK CENTER
-    ========================== */
-
-    .left-sidebar .heading{
-        display:flex !important;
-        align-items:center !important;
-    }
-
-    .left-sidebar .heading .box-status{
-        position:absolute !important;
-        left:50% !important;
-        transform:translateX(-50%) !important;
-        margin:0 !important;
-    }
 
 
 
