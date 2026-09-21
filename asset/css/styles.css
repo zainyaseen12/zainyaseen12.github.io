@@ -5171,22 +5171,77 @@ p.skils-description {
 }
 
 
+/* =========================
+   SITE ICON
+========================= */
 
 .site-icon {
-    width: 260px;
-    height: 260px;
+    width: 280px;
+    height: 220px;
     display: block;
     object-fit: contain;
     object-position: center;
-    margin: 0 auto 30px;
+    margin: 25px auto 45px;
     background: transparent;
     border: 0;
 }
 
-@media (max-width: 768px) {
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 1025px) {
+
     .site-icon {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 25px;
+        width: 280px;
+        height: 220px;
+        margin: 25px auto 45px;
     }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    .site-icon {
+        width: 240px;
+        height: 190px;
+        margin: 20px auto 35px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .site-icon {
+        width: 190px;
+        height: 150px;
+        margin: 20px auto 30px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+    .site-icon {
+        width: 165px;
+        height: 130px;
+        margin: 15px auto 25px;
+    }
+
 }
