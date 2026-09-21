@@ -5181,7 +5181,6 @@ p.skils-description {
     display: block;
     object-fit: contain;
     object-position: center;
-    margin: 25px auto 45px;
     background: transparent;
     border: 0;
 }
@@ -5196,7 +5195,6 @@ p.skils-description {
     .site-icon {
     width: 60px;
     height: 60px;
-        margin: 25px auto 45px;
     }
 
 }
@@ -5211,7 +5209,6 @@ p.skils-description {
     .site-icon {
     width: 60px;
     height: 60px;
-        margin: 20px auto 35px;
     }
 
 }
@@ -5226,7 +5223,6 @@ p.skils-description {
     .site-icon {
     width: 60px;
     height: 60px;
-        margin: 20px auto 30px;
     }
 
 }
@@ -5241,7 +5237,6 @@ p.skils-description {
     .site-icon {
     width: 60px;
     height: 60px;
-        margin: 15px auto 25px;
     }
 
 }
