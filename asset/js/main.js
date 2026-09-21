@@ -381,33 +381,52 @@
 
 /*--custom-csss-*/
 
-document.addEventListener('contextmenu', function (e) {
-    e.preventDefault();
-});
+<script>
+(function () {
 
-document.addEventListener('keydown', function (e) {
-
-    // F12
-    if (e.key === 'F12') {
+    // Disable right click
+    document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
-        return false;
-    }
+    });
 
-    // Ctrl + Shift + I
-    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
-        e.preventDefault();
-        return false;
-    }
+    // Disable common shortcuts
+    document.addEventListener('keydown', function (e) {
 
-    // Ctrl + Shift + J
-    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
-        e.preventDefault();
-        return false;
-    }
+        // F12
+        if (e.key === 'F12') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
 
-    // Ctrl + U
-    if (e.ctrlKey && e.key.toLowerCase() === 'u') {
-        e.preventDefault();
-        return false;
-    }
-});
+        // Ctrl + U
+        if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+        // Ctrl + Shift + I
+        if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+        // Ctrl + Shift + J
+        if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+
+        // Ctrl + Shift + C
+        if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c') {
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }
+    }, true);
+
+})();
+</script>
