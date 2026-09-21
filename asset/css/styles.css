@@ -5176,8 +5176,8 @@ p.skils-description {
 ========================= */
 
 .site-icon {
-    width: 280px;
-    height: 220px;
+    width: 60px;
+    height: 60px;
     display: block;
     object-fit: contain;
     object-position: center;
