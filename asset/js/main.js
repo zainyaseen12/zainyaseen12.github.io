@@ -149,49 +149,98 @@
     };
 
     // contact form
-    var ajaxContactForm = function () {
-    $('#form-contact').each(function () {
+var ajaxContactForm = function () {
+
+    $('#portfolio-contact-form').each(function () {
+
         $(this).validate({
+
             submitHandler: function (form) {
-                var $form = $(form),
-                    str = $form.serialize(),
-                    loading = $('<div />', { 'class': 'loading' });
+
+                var $form = $(form);
+                var loading = $('<div />', {
+                    'class': 'loading'
+                });
 
                 $.ajax({
+
                     type: "POST",
-                    url: $form.attr('action'),
-                    data: str,
+
+                    url: "https://formsubmit.co/ajax/zainwebdev267@gmail.com",
+
+                    data: $form.serialize(),
+
+                    dataType: "json",
+
                     beforeSend: function () {
+
                         $form.find('.send-wrap').append(loading);
+
+                        $form.find('.flat-alert').remove();
+
                     },
-                    success: function (msg) {
-                        var result, cls;
-                        if (msg == 'Success') {
-                            result = 'Message Sent Successfully To Email Administrator';
-                            cls = 'msg-success';
+
+                    success: function (response) {
+
+                        if (response.success === true) {
+
+                            $form.prepend(
+                                $('<div />', {
+                                    'class': 'flat-alert msg-success',
+                                    'text': 'Message Sent Successfully!'
+                                }).append(
+                                    $('<a class="close d-flex" href="#"><i class="icon icon-times-solid"></i></a>')
+                                )
+                            );
+
+                            $form.find(':input')
+                                .not(':button, :submit, :hidden')
+                                .val('');
+
                         } else {
-                            result = 'Error sending email.';
-                            cls = 'msg-error';
+
+                            $form.prepend(
+                                $('<div />', {
+                                    'class': 'flat-alert msg-error',
+                                    'text': response.message || 'Error sending email.'
+                                }).append(
+                                    $('<a class="close d-flex" href="#"><i class="icon icon-times-solid"></i></a>')
+                                )
+                            );
+
                         }
+
+                    },
+
+                    error: function (xhr) {
+
+                        console.error('FormSubmit Error:', xhr.responseText);
 
                         $form.prepend(
                             $('<div />', {
-                                'class': 'flat-alert ' + cls,
-                                'text': result
+                                'class': 'flat-alert msg-error',
+                                'text': 'Unable to send message. Please try again.'
                             }).append(
                                 $('<a class="close d-flex" href="#"><i class="icon icon-times-solid"></i></a>')
                             )
                         );
 
-                        $form.find(':input').not('.submit').val('');
                     },
-                    complete: function (xhr, status, error_thrown) {
+
+                    complete: function () {
+
                         $form.find('.loading').remove();
+
                     }
+
                 });
+
             }
+
         });
+
     });
+
 };
 
     // subscribe mailchimp
