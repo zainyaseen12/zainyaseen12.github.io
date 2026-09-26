@@ -383,50 +383,46 @@
 
 <script>
 (function () {
+    'use strict';
 
-    // Disable right click
+    // Disable right-click
     document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
     });
 
-    // Disable common shortcuts
+    // Disable selected keyboard shortcuts
     document.addEventListener('keydown', function (e) {
 
         // F12
         if (e.key === 'F12') {
             e.preventDefault();
-            e.stopPropagation();
-            return false;
+            return;
         }
 
         // Ctrl + U
-        if (e.ctrlKey && e.key.toLowerCase() === 'u') {
+        if (e.ctrlKey && !e.shiftKey && e.key.toLowerCase() === 'u') {
             e.preventDefault();
-            e.stopPropagation();
-            return false;
+            return;
         }
 
         // Ctrl + Shift + I
         if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') {
             e.preventDefault();
-            e.stopPropagation();
-            return false;
+            return;
         }
 
         // Ctrl + Shift + J
         if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j') {
             e.preventDefault();
-            e.stopPropagation();
-            return false;
+            return;
         }
 
         // Ctrl + Shift + C
         if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'c') {
             e.preventDefault();
-            e.stopPropagation();
-            return false;
+            return;
         }
-    }, true);
+    });
 
 })();
 </script>
