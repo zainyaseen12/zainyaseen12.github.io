@@ -150,97 +150,56 @@
 
     // contact form
 var ajaxContactForm = function () {
-
-    $('#portfolio-contact-form').each(function () {
-
+    $('#form-contact').each(function () {
         $(this).validate({
-
             submitHandler: function (form) {
 
-                var $form = $(form);
-                var loading = $('<div />', {
-                    'class': 'loading'
-                });
+                var $form = $(form),
+                    str = $form.serialize(),
+                    loading = $('<div />', {
+                        'class': 'loading'
+                    });
 
                 $.ajax({
-
                     type: "POST",
-
-                    url: "https://formsubmit.co/ajax/zainwebdev267@gmail.com",
-
-                    data: $form.serialize(),
-
-                    dataType: "json",
+                    url: $form.attr('action'),
+                    data: str,
 
                     beforeSend: function () {
-
                         $form.find('.send-wrap').append(loading);
-
-                        $form.find('.flat-alert').remove();
-
                     },
 
-                    success: function (response) {
+                    success: function (msg) {
 
-                        if (response.success === true) {
+                        var result, cls;
 
-                            $form.prepend(
-                                $('<div />', {
-                                    'class': 'flat-alert msg-success',
-                                    'text': 'Message Sent Successfully!'
-                                }).append(
-                                    $('<a class="close d-flex" href="#"><i class="icon icon-times-solid"></i></a>')
-                                )
-                            );
-
-                            $form.find(':input')
-                                .not(':button, :submit, :hidden')
-                                .val('');
-
+                               if (msg == 'Success' || msg == 'The form was submitted successfully.') {
+                                 result = 'Thank you! Your message has been sent successfully. I will get back to you soon.';
+                                 cls = 'msg-success';
                         } else {
-
-                            $form.prepend(
-                                $('<div />', {
-                                    'class': 'flat-alert msg-error',
-                                    'text': response.message || 'Error sending email.'
-                                }).append(
-                                    $('<a class="close d-flex" href="#"><i class="icon icon-times-solid"></i></a>')
-                                )
-                            );
-
-                        }
-
-                    },
-
-                    error: function (xhr) {
-
-                        console.error('FormSubmit Error:', xhr.responseText);
+                               result = 'Unable to send your message. Please try again.';
+                               cls = 'msg-error';
+                               }
 
                         $form.prepend(
                             $('<div />', {
-                                'class': 'flat-alert msg-error',
-                                'text': 'Unable to send message. Please try again.'
+                                'class': 'flat-alert ' + cls,
+                                'text': result
                             }).append(
                                 $('<a class="close d-flex" href="#"><i class="icon icon-times-solid"></i></a>')
                             )
                         );
 
+                        $form.find(':input').not('.submit').val('');
                     },
 
-                    complete: function () {
-
+                    complete: function (xhr, status) {
                         $form.find('.loading').remove();
-
                     }
-
                 });
-
             }
-
         });
-
     });
-
 };
 
     // subscribe mailchimp
